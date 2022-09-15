@@ -135,14 +135,23 @@ body {
 }
 
 .container .contentBox ul.education li a {
+  position: relative;
   text-decoration: none;
-  padding: 1px;
+  padding: 1px 13px;
   pointer-events: auto;
 }
 
 .container .contentBox ul.education li a::before {
-  content: "\e200";
-  margin: 0 10px;
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  /* convierte el cuadrado a un triangulo */
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background: #ff8bb3;
+  transition: 0.5s;
 }
 
 h5 {
