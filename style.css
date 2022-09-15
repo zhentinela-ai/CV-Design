@@ -99,6 +99,7 @@ body {
   letter-spacing: 0.1em;
   margin-bottom: 20px;
   margin-top: 50px;
+  text-transform: uppercase;
 }
 
 .container .contentBox ul {
@@ -113,6 +114,12 @@ body {
   color: #333;
   cursor: pointer;
   display: flex;
+  pointer-events: none;
+}
+
+.container .contentBox ul li span a {
+  text-decoration: none;
+  pointer-events: auto;
 }
 
 .container .contentBox ul li ion-icon {
@@ -124,6 +131,18 @@ body {
 .container .contentBox ul.education li {
   flex-direction: column;
   margin: 25px 0;
+  pointer-events: none;
+}
+
+.container .contentBox ul.education li a {
+  text-decoration: none;
+  padding: 1px;
+  pointer-events: auto;
+}
+
+.container .contentBox ul.education li a::before {
+  content: "\e200";
+  margin: 0 10px;
 }
 
 h5 {
@@ -181,7 +200,7 @@ h6 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0;
+  margin: 20px 2.5px;
 }
 
 .container .contentBox ul.interest li .icon {
@@ -196,6 +215,7 @@ h6 {
   align-items: center;
 }
 
+
 .container .contentBox ul.interest li .icon ion-icon {
   color: #fff;
   margin-right: 0;
@@ -209,10 +229,14 @@ p {
   padding-left: 40px;
 }
 
+.rightSide .about p {
+  text-align: justify;
+}
+
 .about .box {
   display: flex;
   flex-direction: row;
-  margin: 20px 0;
+  margin: 7px 0;
 }
 
 .about .box .year_company {
