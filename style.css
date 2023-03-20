@@ -1,4 +1,3 @@
-/* importa Poppins desde la url */
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap");
 
 * {
@@ -46,10 +45,13 @@ body {
 .container .top .imgBx .box {
   position: relative;
   width: 70%;
-  min-width: 200px;
+  min-width: 270px;
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .3),
+  0 0 12px rgba(0, 0, 0, .6),
+  0 0 16px rgba(0, 0, 0, .9);
 }
 
 .container .top .imgBx .box img {
@@ -59,6 +61,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  box-shadow: 4px 4px 8px black;
 }
 
 .container .top .profileText {
@@ -69,15 +72,17 @@ body {
 }
 
 .container .top .profileText h3 {
-  font-size: 3em;
+  font-size: 2.5em;
   letter-spacing: 0.1em;
   line-height: 1.2em;
   font-weight: 600;
   color: #333;
+  text-align: right;
 }
 
 .container .top .profileText h3 span {
   position: relative;
+  width: 100%;
   font-size: 0.5em;
   font-weight: 300;
   top: -10px;
@@ -88,11 +93,73 @@ body {
   min-height: 500px;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: 3fr 100px;
   padding: 0 40px 40px;
 }
 
-.container .contentBox h3 {
+.rightSide {
+  padding-left: 40px;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.leftSide {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  background: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.leftSide .group {
+  padding: 10px;
+}
+
+.leftSide .group h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  letter-spacing: 6px;
+  color: whitesmoke;
+  text-shadow: 0 0 4px blue,
+  0 0 8px blueviolet,
+  0 0 16px blueviolet;
+}
+
+.rightSide h2 {
+  font-size: 30px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 1px orange,
+  0 0 2px orangered,
+  0 0 3px red;
+}
+
+.rightSide .about p {
+  text-align: justify;
+  font-size: 0.7em;
+}
+
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.container .contentBox .footer {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-top: 15px;
+}
+
+.container .contentBox .footer h3 {
   border-left: 4px solid #ff8bb3;
+  width: 20%;
+  height: 30px;
   padding-left: 10px;
   line-height: 1em;
   font-weight: 600;
@@ -101,38 +168,57 @@ body {
   margin-bottom: 20px;
   margin-top: 50px;
   text-transform: uppercase;
+  margin: auto 0;
 }
 
-.container .contentBox ul {
+.container .contentBox .footer ul {
   position: relative;
-  margin: 10px 0;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: space-between;
+  gap: 0;
+  margin: 0;
 }
 
-.container .contentBox ul li {
+.container .contentBox .footer ul li {
   list-style: none;
-  margin: 25px 0;
+  font-size: 0.8em;
+  width: 50%;
+  margin: 0;
   line-height: 1em;
   color: #333;
   cursor: pointer;
-  display: flex;
   pointer-events: none;
 }
 
-.container .contentBox ul li span a {
+.container .contentBox .footer ul li span a {
   text-decoration: none;
   pointer-events: auto;
 }
 
-.container .contentBox ul li ion-icon {
+.container .contentBox .footer ul li span a:hover {
+  text-decoration: underline;
+}
+
+.container .contentBox .footer ul li ion-icon {
   font-size: 1.2em;
   margin-right: 10px;
   color: #3590d2;
 }
 
+/* .container .contentBox .footer ul li ion-icon .icon-inner {
+  padding: 4px;
+} */
+  
 .container .contentBox ul.education li {
+  display: flex;
   flex-direction: column;
-  margin: 25px 0;
+  margin: 10px 0;
   pointer-events: none;
+  font-size: 0.7em;
 }
 
 .container .contentBox ul.education li a {
@@ -140,6 +226,11 @@ body {
   text-decoration: none;
   padding: 1px 13px;
   pointer-events: auto;
+  width: 70%;
+}
+
+.container .contentBox ul.education li a:hover {
+  letter-spacing: 2px;
 }
 
 .container .contentBox ul.education li a::before {
@@ -162,7 +253,7 @@ h5 {
 h4 {
   color: #333;
   font-weight: 500;
-  margin: 5px 0;
+  margin: 0;
 }
 
 h6 {
@@ -185,9 +276,9 @@ h6 {
   position: relative;
   width: 100%;
   background: #e3e3e3;
-  height: 6px;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  height: 4px;
+  margin-top: 5px;
+  margin-bottom: 8px;
   display: block;
   overflow: hidden;
 }
@@ -225,7 +316,6 @@ h6 {
   align-items: center;
 }
 
-
 .container .contentBox ul.interest li .icon ion-icon {
   color: #fff;
   margin-right: 0;
@@ -233,14 +323,6 @@ h6 {
 
 p {
   font-style: 300;
-}
-
-.rightSide {
-  padding-left: 40px;
-}
-
-.rightSide .about p {
-  text-align: justify;
 }
 
 .about .box {
@@ -297,4 +379,8 @@ p {
   left: 0;
   height: 100%;
   background: #3590d2;
+}
+
+.language li span {
+  font-size: 0.7em;
 }
